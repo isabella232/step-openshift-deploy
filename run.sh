@@ -48,10 +48,12 @@ cd "$deploydir"
 debug 'synced files to deploydir:'
 debug "$(ls -a)"
 
-git init
 git config user.email "openshift@wercker.com"
 git config user.name "wercker"
+
+git init
 git add -A
+git status
 git commit -m 'wercker deploy'
 result="$(git push -f $WERCKER_OPENSHIFT_GITURL master)"
 
