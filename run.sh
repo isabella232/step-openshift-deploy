@@ -43,10 +43,11 @@ debug "$(ls -a)"
 
 sudo rsync --archive "." "$deploydir" -i
 
-debug 'synced files to deploydir:'
-debug "$(ls -a \"$deploydir\")"
+cd "$deploydir"
 
-cd deploydir
+debug 'synced files to deploydir:'
+debug "$(ls -a)"
+
 git init
 git config user.email "openshift@wercker.com"
 git config user.name "wercker"
