@@ -51,6 +51,7 @@ debug "$(ls -a)"
 git config user.email "openshift@wercker.com"
 git config user.name "wercker"
 
+rm -rf ".git"
 git init
 git add -A
 git status
