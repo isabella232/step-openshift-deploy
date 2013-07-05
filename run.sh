@@ -36,10 +36,10 @@ chmod 0700 $GIT_SSH
 debug 'created git ssh file:'
 debug "$(cat $GIT_SSH)"
 
-rsync --archive $WERCKER_SOURCE_DIR/ deploydir/
+rsync --archive "$WERCKER_SOURCE_DIR" "$deploydir"
 
 debug 'synced files to deploydir:'
-debug "$(ls -a $deploydir)"
+debug "$(ls -a \"$deploydir\")"
 
 cd deploydir
 git init
