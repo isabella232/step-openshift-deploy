@@ -33,6 +33,8 @@ echo -e "$WERCKER_OPENSHIFT_PRIVATE_KEY" > "$sshkeypath"
 echo "ssh -t -e none -i $sshkeypath -o 'StrictHostKeyChecking no' \$@" > $GIT_SSH
 chmod 0700 $GIT_SSH
 
+debug "Currently in: $(pwd)"
+
 debug 'created git ssh file:'
 debug "$(cat $GIT_SSH)"
 
