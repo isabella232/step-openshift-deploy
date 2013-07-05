@@ -39,9 +39,9 @@ debug 'created git ssh file:'
 debug "$(cat $GIT_SSH)"
 
 debug 'will sync the follwing files to deploydir:'
-debug "$(ls -a \"./\")"
+debug "$(ls -a)"
 
-sudo rsync --archive "./" "$deploydir" -i
+sudo rsync --archive "." "$deploydir" -i
 
 debug 'synced files to deploydir:'
 debug "$(ls -a \"$deploydir\")"
