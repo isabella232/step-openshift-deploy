@@ -51,7 +51,7 @@ debug "$(ls -a)"
 git init
 git config user.email "openshift@wercker.com"
 git config user.name "wercker"
-git add .
+git add -A
 git commit -m 'wercker deploy'
 result="$(git push -f $WERCKER_OPENSHIFT_GITURL master)"
 
